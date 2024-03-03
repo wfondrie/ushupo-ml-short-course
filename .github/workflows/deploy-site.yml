@@ -14,6 +14,7 @@ jobs:
     - run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
+        git fetch origin gh-pages --depth=1
 
     - uses: actions/setup-python@v4
       with:
@@ -23,3 +24,5 @@ jobs:
 
     - if: github.event_name == 'release'
       run: mike alias -u ${{  github.ref_name }} latest
+
+    - run: git push --branch gh-pages
