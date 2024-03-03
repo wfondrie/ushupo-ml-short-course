@@ -1,0 +1,26 @@
+channels:
+- bioconda
+- conda-forge
+dependencies:
+- python=3.10
+- pip
+- ipykernel
+
+  # Standard Python Data Science stack:
+- scipy
+- numpy
+- pandas
+- scikit-learn
+- matplotlib
+- seaborn
+
+  # Mass spec:
+- ppx
+- mokapot
+- pyteomics
+- spectrum_utils
+- biopython
+
+  # local:
+- pip:
+  - -e .
