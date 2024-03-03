@@ -5,14 +5,17 @@ on:
     branches:
     - main
     release:
-      types: [created]
+      types: [published, edited]
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v4
       with:
-        python-version: 3.x
-    - run: pip install mkdocs-material
-    - run: mkdocs gh-deploy --force
+        python-version: 3.11
+    - run: pip install mkdocs-material mike
+    - run: mike deploy ${{ github.ref_name }}
+
+    - if: github.event_name == "release"
+      run: mike alias -u ${{  github.ref_name }} latest
