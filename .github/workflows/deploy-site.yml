@@ -25,4 +25,4 @@ jobs:
     - if: github.event_name == 'release'
       run: mike alias -u ${{  github.ref_name }} latest
 
-    - run: git push --branch gh-pages
+    - run: git push origin gh-pages
