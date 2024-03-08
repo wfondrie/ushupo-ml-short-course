@@ -24,3 +24,4 @@ dependencies:
   # local:
 - pip:
   - -e .
+  - vizta

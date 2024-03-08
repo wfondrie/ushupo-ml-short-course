@@ -18,7 +18,8 @@ target-version = "py310"
 # D100 Missing docstring in public module
 # ANN102 Missing type annotation for `cls` in classmethod
 # D401 First line of docstring should be in imperative mood
-ignore = ["D213", "ANN101", "D203", "D100", "ANN102", "D401"]
+# T201 Print statements
+ignore = ["D213", "ANN101", "D203", "D100", "ANN102", "D401", "T201", "N803", "N806"]
 select = ["E", "F", "W", "C", "I", "D", "UP", "N", "T20"]
 
 [tool.setuptools]
