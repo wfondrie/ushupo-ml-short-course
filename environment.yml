@@ -5,8 +5,9 @@ dependencies:
 - python=3.10
 - pip
 - ipykernel
+- jupyterlab
 
-  # Standard Python Data Science stack:
+# Standard Python Data Science stack:
 - scipy
 - numpy
 - pandas
@@ -14,14 +15,15 @@ dependencies:
 - matplotlib
 - seaborn
 
-  # Mass spec:
+# Mass spec:
 - ppx
 - mokapot
 - pyteomics
 - spectrum_utils
 - biopython
+- percolator
 
-  # local:
+# local:
 - pip:
   - -e .
   - vizta

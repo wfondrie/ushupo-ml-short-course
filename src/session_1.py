@@ -110,13 +110,11 @@ def fit_model_to_ret_times(k=None):
             data=err_df,
             x="kvals",
             y="mse",
-            label="Training MSE",
             hue="dataset",
             marker="o",
             ax=err_ax,
         )
         err_ax.legend(
-            ["Training MSE", "Validation MSE"],
             title="",
             frameon=False,
             loc="lower left",
@@ -130,9 +128,11 @@ def fit_model_to_ret_times(k=None):
 def load_data():
     """Load simulated biomarker data."""
     return make_classification(
-        n_samples=200,
-        n_features=100,
-        n_informative=20,
-        n_redudundant=20,
+        n_samples=500,
+        n_features=1000,
+        n_informative=5,
+        n_redundant=2,
         n_classes=2,
+        class_sep=0.4,
+        random_state=42,
     )
