@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+from sklearn.datasets import make_classification
 from sklearn.metrics import mean_squared_error
 from sklearn.neighbors import KNeighborsRegressor
 
@@ -124,3 +125,14 @@ def fit_model_to_ret_times(k=None):
 
     plt.tight_layout()
     plt.show()
+
+
+def load_data():
+    """Load simulated biomarker data."""
+    return make_classification(
+        n_samples=200,
+        n_features=100,
+        n_informative=20,
+        n_redudundant=20,
+        n_classes=2,
+    )
