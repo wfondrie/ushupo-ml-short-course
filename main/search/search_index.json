@@ -1,1 +1,1 @@
-{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[{"location":"","title":"Links to Lab Exercises","text":""}]}
+{"config":{"lang":["en"],"separator":"[\\s\\-]+","pipeline":["stopWordFilter"]},"docs":[{"location":"","title":"Links to Lab Exercises","text":"<ul> <li>Lab 1: getting started</li> <li>Lab 2: Intro to logistic regression and svms<ul> <li>Lab 2.2: Percolator (bonus)</li> </ul> </li> <li>Lab 3: Intro to decision trees</li> <li>Lab 4: Intro to neural networks</li> </ul>"}]}
