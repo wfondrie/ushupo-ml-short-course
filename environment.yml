@@ -21,7 +21,7 @@ dependencies:
 #- mokapot
 #- pyteomics
 #- spectrum_utils
-#- biopython
+- biopython
 #- percolator
 
 # local:
