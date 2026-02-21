@@ -1,4 +1,4 @@
-.PHONY: clean lint env help jupyter serve data
+.PHONY: clean lint env help jupyter serve data clear-notebooks
 SHELL := /bin/bash
 CONDA ?= conda
 CONDA_BASE := $(shell $(CONDA) info --base 2>/dev/null)
@@ -31,6 +31,10 @@ data: data/PXD006832/Skyline_output_all_runs.csv
 data/PXD006832/Skyline_output_all_runs.csv:
 	mkdir -p data
 	ppx PXD006832 Skyline_output_all_runs.csv
+
+## Clear output cells from all notebooks
+clear-notebooks:
+	jupyter nbconvert --clear-output --inplace notebooks/*.ipynb
 
 #################################################################################
 # Self Documenting Commands                                                     #
