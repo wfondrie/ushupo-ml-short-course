@@ -1,5 +1,8 @@
 .PHONY: clean lint env help jupyter serve data
-CONDA_ACTIVATE=source $$(${CONDA} info --base)/etc/profile.d/conda.sh ; ${CONDA} activate ; ${CONDA} activate
+SHELL := /bin/bash
+CONDA ?= conda
+CONDA_BASE := $(shell $(CONDA) info --base 2>/dev/null)
+CONDA_ACTIVATE = . "$(CONDA_BASE)/etc/profile.d/conda.sh" && $(CONDA) activate
 
 #################################################################################
 # COMMANDS                                                                      #
@@ -7,7 +10,7 @@ CONDA_ACTIVATE=source $$(${CONDA} info --base)/etc/profile.d/conda.sh ; ${CONDA}
 
 ## Create or update your conda environment
 env: environment.yml
-	conda env update -p ./envs -f environment.yml --prune
+	$(CONDA) env update -p ./envs -f environment.yml --prune
 	@echo
 	@echo ">>> Activate your Conda Environment:"
 	@echo "    $ conda activate ./envs"
@@ -15,7 +18,7 @@ env: environment.yml
 
 ## Start Jupyter Lab in the project environment
 jupyter: env
-	${CONDA_ACTIVATE} ./envs && cd notebooks && jupyter lab
+	$(CONDA_ACTIVATE) ./envs && cd notebooks && jupyter lab
 
 ## Serve the website locally
 serve:

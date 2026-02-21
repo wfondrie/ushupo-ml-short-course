@@ -2,9 +2,11 @@ site_name: Machine Learning for Proteomics Data Analysis
 repo_url: https://github.com/wfondrie/ushupo-ml-short-course
 nav:
 - Home: index.md
+- Optional Local Setup: local-setup.md
 
 theme:
-  logo: static/spectrum-logo.svg
+  logo: static/protein-emoji.svg
+  favicon: static/protein-emoji.svg
   name: material
   font:
     text: Fira Sans
