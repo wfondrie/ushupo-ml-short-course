@@ -6,6 +6,7 @@ dependencies:
 - pip
 - ipykernel
 - jupyterlab
+- requests
 
 # Standard Python Data Science stack:
 - scipy
@@ -16,14 +17,15 @@ dependencies:
 - seaborn
 
 # Mass spec:
-- ppx
-- mokapot
-- pyteomics
-- spectrum_utils
-- biopython
+#- ppx
+#- mokapot
+#- pyteomics
+#- spectrum_utils
+#- biopython
 #- percolator
 
 # local:
 - pip:
   - -e .
   - vizta
+  - cowsay
